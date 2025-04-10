@@ -11,7 +11,7 @@ The content has been adapted and enriched to provide a smoother and more guided 
 
 ## 📁 Repository Structure
 
-### **01 – Azure Resource Setup**  
+### **[01 – Azure Resource Setup](./01_AzureResourceSetup)**  
 🧱 **Foundation for Everything**  
 Before doing anything else, you’ll need to set up the essential Azure services: **Azure OpenAI**, **Azure AI Search**, and **Azure Storage**.  
 This step lays the groundwork for all following steps.
