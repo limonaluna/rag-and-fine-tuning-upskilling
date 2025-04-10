@@ -36,18 +36,17 @@ Learn how to fine-tune a GPT model using Azure OpenAI Studio - UI Dashboard.
 
 You can check the MS Learn document [here](https://learn.microsoft.com/en-us/azure/ai-services/openai/how-to/fine-tuning?tabs=turbo%2Cpython&pivots=programming-language-studio) for more details.
 
-### Step 1: (Optional) Create your training and validation data
+### Step 1: Choose a Dataset for Fine-Tuning
 **TO DO**: Adjust to VW glossary example
 **TO DO**: Schedule break for after this and prepare content to fill the gap
 **TO DO**: think about whether they could create their own dataset instead?
-## Choosing a Dataset for Fine-Tuning
 
 You have three options for preparing training and validation data for your fine-tuning experiment:
 
 #### 1. Use the Public Sample Dataset (Clippy)
 
 - **File Path**:  
-  `07-LLM-Fine-Tuning\data\public-sample\training_set.jsonl`
+  `07-LLM-Fine-Tuning\data\public-sample`
 - **Note**: This dataset contains only 10 examples. While it's not suitable for producing high-quality fine-tuning results, it's a great starting point to understand the fine-tuning process and pipeline.
 
 #### 2. Use the VW Technical Glossary Dataset
@@ -66,8 +65,7 @@ You may also choose to define your own use case and generate a custom training a
 - Minimum of **50 high-quality samples** (preferably in the thousands for better results)
 - Format must be **JSON Lines (JSONL)** with **UTF-8 encoding**
 
-💡 *Tip: You can use an LLM to help you generate training examples. Provide it with your source material and prompt it to create a specific number of examples tailored to your use case (e.g., Q&A, summarization, classification).*
-
+💡 *Tip: You can use an LLM to help you generate training examples. Provide it with your source material and prompt it to create a specific number of examples (in JSONL-format) tailored to your use case (e.g., Q&A, summarization, classification).*
 
 
 ### Step 2: Open the *Create a custom model* wizard
@@ -121,8 +119,6 @@ After you start a fine-tuning job, it can take some time to complete (from minut
 ![Fine Tune Training Metrics: Token Accuracy](./../media/07-fine-tune-metrics-token-accuracy.png)
 
 
-
-
 ### Step 9: Deploy a custom model
 When the fine-tuning job succeeds, you can deploy the custom model from the **Fine-Tuning** pane to make it available for use with completion calls.
 
@@ -141,6 +137,18 @@ After your custom model deploys (Provisioning State = "Succeeded"), you can use 
 ![How to use the fine-tuned model](./../media/07-use-custom-model.png)
 
 You can use the **Playgrounds** in [Azure OpenAI Studio]("https://oai.azure.com") to experiment with your new deployment. You can also use the fine-tuned model by calling the completion API.
+
+Example: Compare the output of Base-Model to your fine-tuned model to a question specific to your fine-tuned data.
+
+* Base Model Response:
+![Base Model Response](./../media/07-base-model-response.png)
+
+* Fine-Tuned Model Response
+![Fine-Tuned Model Response](./../media/07-fine-tune-model-response.png)
+
+⚠️ **Disclaimer**  
+The sample datasets used in this fine-tuning tutorial are intentionally small and simplified for demonstration purposes. As a result, any performance comparisons between the fine-tuned model and the base model should be interpreted with caution. The limited data volume and domain coverage mean that observed improvements (or lack thereof) may not generalize to real-world scenarios. For meaningful fine-tuning results, larger and more representative datasets are recommended.
+
 
 ### Step 11 (Optional): Clean up your deployment resources
 When you're done with your custom model, you can delete the deployment and model. You can also delete the training and validation files you uploaded to the service, if needed.
