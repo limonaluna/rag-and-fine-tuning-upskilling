@@ -85,6 +85,8 @@ After you start a fine-tuning job, it can take some time to complete (from minut
 ![Fine Tune Training Logs](./../media/07-fine-tune-training-logs.png)
 
 
+**TO DO**: Schedule break for after this and prepare content to fill the gap
+**TO DO**: think about whether they could create their own dataset instead?
 
 
 
