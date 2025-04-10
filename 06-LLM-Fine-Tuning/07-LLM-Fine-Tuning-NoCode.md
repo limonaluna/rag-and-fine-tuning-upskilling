@@ -3,7 +3,7 @@ A fine-tuning guide for both OpenAI and Open-Source Large Lauguage Models on Azu
 
 ## What
 Fine-Tuning, or *Supervised Fine-Tuning*, retrains an existing pre-trained LLM using example data, resulting in a new "custom" fine-tuned LLM that has been optimized for the provided task-specific examples. 
-![What is Fine-Tuning](./../media/07-fine-tuned-llm.png)
+![What is Fine-Tuning](./../media/06-fine-tuned-llm.png)
 
 ## Why
 Typically, we use Fine-Tuning to:
@@ -46,13 +46,13 @@ You have three options for preparing training and validation data for your fine-
 #### 1. Use the Public Sample Dataset (Clippy)
 
 - **File Path**:  
-  `07-LLM-Fine-Tuning\data\public-sample`
+  `06-LLM-Fine-Tuning\data\public-sample`
 - **Note**: This dataset contains only 10 examples. While it's not suitable for producing high-quality fine-tuning results, it's a great starting point to understand the fine-tuning process and pipeline.
 
 #### 2. Use the VW Technical Glossary Dataset
 
 - **File Path**:  
-  `07-LLM-Fine-Tuning\data\vw-technical-glossary\training_set_vw.jsonl`
+  `06-LLM-Fine-Tuning\data\vw-technical-glossary\training_set_vw.jsonl`
 - **Source**: Derived from the [Volkswagen Vans Technical Glossary](https://www.volkswagen-vans.co.uk/en/technology/technical-glossary.html)
 - **Generation Method**: GPT-4o was used to create 100 high-quality questions based on glossary abbreviations.
 - **Note**: This dataset is more suitable for fine-tuning than the Clippy example, though the sample size is still relatively limited.
@@ -71,25 +71,25 @@ You may also choose to define your own use case and generate a custom training a
 ### Step 2: Open the *Create a custom model* wizard
 1. Open Azure OpenAI Studio at [https://oai.azure.com/](https://oai.azure.com/) and sign in with credentials that have access to your Azure OpenAI resource. During the sign-in workflow, select the appropriate directory, Azure subscription, and Azure OpenAI resource.
 2. In Azure Foundry, browse to the **Tools > Fine-Tuning** pane, and select **Fine-tune model**.
-![Fine-tune base model](./../media/07-fine-tune-wizard.png)
+![Fine-tune base model](./../media/06-fine-tune-wizard.png)
 
 ### Step 3: Select the *Base model*
 The first step in creating a custom model is to choose a base model. 
 
 The **Base model** pane lets you choose a base model to use for your custom model. Select the base model from the **Base model type** dropdown, and then select **Next** to continue.
-![Base Model selection](./../media/07-base-model-selection.png)
+![Base Model selection](./../media/06-base-model-selection.png)
 
 ### Step 4: Configure your *Fine-Tuning Method*
 First, you need to choose the Fine-Tuning Method. We choose **Supervised** Method for this tutorial.
-![Fine-Tuning Method](./../media/07-fine-tune-wizard2.png)
+![Fine-Tuning Method](./../media/06-fine-tune-wizard2.png)
 
 
 ### Step 5: Upload your *Training Data*
 The next step is to choose your training data either from the previously uploaded one or by uploading a new one. If you want to create your own training data, please note the following guidance on the required format of the training and validation data: [Guidance on data format](https://learn.microsoft.com/en-us/azure/ai-services/openai/how-to/fine-tuning?tabs=azure-openai&pivots=programming-language-studio#prepare-your-training-and-validation-data)
 
-Select **Local file** to upload training data from a local file - the sample training data can be found in this repository under "07-LLM-Fine-Tuning/data/public-sample/training_set.jsonl"
+Select **Local file** to upload training data from a local file - the sample training data can be found in this repository under "06-LLM-Fine-Tuning/data/public-sample/training_set.jsonl"
 
-![Upload training data](./../media/07-upload-training-data.png)
+![Upload training data](./../media/06-upload-training-data.png)
 
 ### Step 6: Upload your *Validation Data*
 You can choose your validation data by following the similar pattern as you upload your training data.
@@ -103,48 +103,48 @@ One can refer to the MS Learn document [here](https://learn.microsoft.com/en-us/
 If you're ready to train your model, select **Submit** to start the fine-tuning job and return to the **Fine-Tuning** pane.
 
 You can check the status of the fine-tuned model in the **Status** column of the **Fine-Tuning** tab.
-![Status of Fine-Tuning](./../media/07-fine-tuning-status.png)
+![Status of Fine-Tuning](./../media/06-fine-tuning-status.png)
 
 After you start a fine-tuning job, it can take some time to complete (from minutes to hours). You can also dive deeper by reviewing the **Details**, **Logs**, and **Checkpoints** Tab after clicking on your fine-tune model training run.
 
 * Fine Tuning Run Details:
-![Fine Tune Training Run Details](./../media/07-fine-tune-training-details.png)
+![Fine Tune Training Run Details](./../media/06-fine-tune-training-details.png)
 
 * Fine Tuning Run Logs:
-![Fine Tune Training Logs](./../media/07-fine-tune-training-logs.png)
+![Fine Tune Training Logs](./../media/06-fine-tune-training-logs.png)
 
 * Fine Tuning run Metrics:
-![Fine Tune Training Metrics: Loss](./../media/07-fine-tune-metrics-loss.png)
+![Fine Tune Training Metrics: Loss](./../media/06-fine-tune-metrics-loss.png)
 
-![Fine Tune Training Metrics: Token Accuracy](./../media/07-fine-tune-metrics-token-accuracy.png)
+![Fine Tune Training Metrics: Token Accuracy](./../media/06-fine-tune-metrics-token-accuracy.png)
 
 
 ### Step 9: Deploy a custom model
 When the fine-tuning job succeeds, you can deploy the custom model from the **Fine-Tuning** pane to make it available for use with completion calls.
 
 To deploy your fine-tuned model, select the custom model to deploy, and then select **Deploy**.
-![Deploy custom model](./../media/07-deploy-custom-model.png)
+![Deploy custom model](./../media/06-deploy-custom-model.png)
 
 The **Deploy model** dialog box opens. 
 
 In the dialog box, enter your **Deployment name** and then select **Deploy** to start the deployment of your custom model.
 
-![Deployment name for fine-tuned model](./../media/07-deploy-custom-model2.png)
+![Deployment name for fine-tuned model](./../media/06-deploy-custom-model2.png)
 
 ### Step 10: Test and use a deployed model
 After your custom model deploys (Provisioning State = "Succeeded"), you can use it like any other deployed model. 
 
-![How to use the fine-tuned model](./../media/07-use-custom-model.png)
+![How to use the fine-tuned model](./../media/06-use-custom-model.png)
 
 You can use the **Playgrounds** in [Azure OpenAI Studio]("https://oai.azure.com") to experiment with your new deployment. You can also use the fine-tuned model by calling the completion API.
 
 Example: Compare the output of Base-Model to your fine-tuned model to a question specific to your fine-tuned data.
 
 * Base Model Response:
-![Base Model Response](./../media/07-base-model-response.png)
+![Base Model Response](./../media/06-base-model-response.png)
 
 * Fine-Tuned Model Response
-![Fine-Tuned Model Response](./../media/07-fine-tune-model-response.png)
+![Fine-Tuned Model Response](./../media/06-fine-tune-model-response.png)
 
 ⚠️ **Disclaimer**  
 The sample datasets used in this fine-tuning tutorial are intentionally small and simplified for demonstration purposes. As a result, any performance comparisons between the fine-tuned model and the base model should be interpreted with caution. The limited data volume and domain coverage mean that observed improvements (or lack thereof) may not generalize to real-world scenarios. For meaningful fine-tuning results, larger and more representative datasets are recommended.
@@ -153,7 +153,7 @@ The sample datasets used in this fine-tuning tutorial are intentionally small an
 ### Step 11 (Optional): Clean up your deployment resources
 When you're done with your custom model, you can delete the deployment and model. You can also delete the training and validation files you uploaded to the service, if needed.
 
-![Delete or Continue Fine-Tuning](./../media/07-delete-custom-model.png)
+![Delete or Continue Fine-Tuning](./../media/06-delete-custom-model.png)
 
 ### Step 12 (Optional): Continous fine-tuning
 Once you have created a fine-tuned model you may wish to continue to refine the model over time through further fine-tuning. Continuous fine-tuning is the iterative process of selecting an already fine-tuned model as a base model and fine-tuning it further on new sets of training examples.

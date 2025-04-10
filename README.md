@@ -57,7 +57,7 @@ This notebook builds on RAG Fundamentals and explores **different search strateg
 
 ---
 
-### **07 – LLM Fine-Tuning**  
+### **06 – LLM Fine-Tuning**  
 🎯 **Fine-Tune GPT Models with Azure OpenAI**  
 This is a standalone step focused on using the **Azure OpenAI Studio** to fine-tune a language model (no RAG setup required).
 
