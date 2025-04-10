@@ -37,10 +37,6 @@ Learn how to fine-tune a GPT model using Azure OpenAI Studio - UI Dashboard.
 You can check the MS Learn document [here](https://learn.microsoft.com/en-us/azure/ai-services/openai/how-to/fine-tuning?tabs=turbo%2Cpython&pivots=programming-language-studio) for more details.
 
 ### Step 1: Choose a Dataset for Fine-Tuning
-**TO DO**: Adjust to VW glossary example
-**TO DO**: Schedule break for after this and prepare content to fill the gap
-**TO DO**: think about whether they could create their own dataset instead?
-
 You have three options for preparing training and validation data for your fine-tuning experiment:
 
 #### 1. Use the Public Sample Dataset (Clippy)
@@ -66,6 +62,8 @@ You may also choose to define your own use case and generate a custom training a
 - Format must be **JSON Lines (JSONL)** with **UTF-8 encoding**
 
 💡 *Tip: You can use an LLM to help you generate training examples. Provide it with your source material and prompt it to create a specific number of examples (in JSONL-format) tailored to your use case (e.g., Q&A, summarization, classification).*
+
+- For your reference, a sample notebook has been created that reads the source data (JSON format) and uses GPT-4o to create a structured JSONL document with synthetic training data. Check it out here: 06-LLM-Fine-Tuning\06-Generate-Test-Data.ipynb
 
 
 ### Step 2: Open the *Create a custom model* wizard
