@@ -174,7 +174,8 @@ Hint: You can solve this via the Azure Portal
     5. Select one of the deployed models
     6. Select the **Metrics** tab and view the token consumption of that deployment
 
-    ![GPT-4o consumption](./../media/04-gpt-4o-consumption.png)
+    Check out the sample GPT-4o-consumption here: media\04-gpt-4o-consumption.png
+
 </details>
 
 
