@@ -54,11 +54,9 @@ Find out what Healthplans are offered by Northwind Health
   <summary>:white_check_mark: See Expected Answer!</summary>
   
     - Source-File: Benefit_Options.pdf  
-    - Expected Answer: Northwind Health Plus offers the following additional coverage compared to Northwind Standard:  
-        - Emergency services (in-network and out-of-network)  
-        - Mental health and substance abuse coverage  
-        - Out-of-network services  
-        - Wider range of prescription drug coverage
+    - Expected Answer: Northwind Health offers two health plans: 
+        1. **Northwind Health Plus** - Comprehensive plan with coverage for medical, vision, dental services, prescription drugs, mental health and substance abuse, preventive care, and emergency services (in-network and out-of-network).
+        2. **Northwind Standard** - Basic plan with coverage for medical, vision, dental services, preventive care, and prescription drugs. It does not cover emergency services, mental health and substance abuse, or out-of-network services.
 
 </details>
 
