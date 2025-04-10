@@ -1,0 +1,134 @@
+[
+    {
+        "term": "Active Rollover Protection (ARP)",
+        "definition": "As part of the ESP system, Active Rollover Protection (ARP) recognises an impending rollover and rapidly applies braking to selective wheels to reduce the likelihood of an accident."
+    },
+    {
+        "term": "Adaptive Cruise Control (ACC)",
+        "definition": "Adaptive Cruise Control (ACC) uses radar sensors to maintain a set distance from the vehicle ahead by automatically adjusting your speed. It enhances driving comfort, especially on long journeys."
+    },
+    {
+        "term": "Accessories",
+        "definition": "Volkswagen-approved accessories are available for purchase and fitting at your Van Centre. They are designed to perfectly match your vehicle in fit and style, ensuring durability and reliability."
+    },
+    {
+        "term": "Anti-Lock Braking (ABS)",
+        "definition": "The Anti-Lock Braking System (ABS) prevents the wheels from locking during braking, maintaining steering control and reducing stopping distances on slippery surfaces."
+    },
+    {
+        "term": "App-Connect",
+        "definition": "App-Connect allows you to connect your smartphone to the vehicle's infotainment system via USB, enabling you to use selected apps safely while driving."
+    },
+    {
+        "term": "BlueMotion models",
+        "definition": "BlueMotion models represent Volkswagen's commitment to reducing emissions and improving fuel efficiency through aerodynamic design, low rolling resistance tires, and efficient engines."
+    },
+    {
+        "term": "Brake Assist System (BAS)",
+        "definition": "The Brake Assist System (BAS) detects emergency braking situations and increases brake pressure to help reduce stopping distances."
+    },
+    {
+        "term": "Bulkhead",
+        "definition": "A bulkhead is a partition that separates the driver and passenger area from the cargo area in a van, enhancing safety and security."
+    },
+    {
+        "term": "Car-Net",
+        "definition": "Car-Net is Volkswagen's suite of connected services, providing features like real-time traffic information, remote vehicle status, and more."
+    },
+    {
+        "term": "City Emergency Braking",
+        "definition": "City Emergency Braking is a system that helps prevent low-speed collisions by automatically applying the brakes if an imminent collision is detected."
+    },
+    {
+        "term": "DAB+",
+        "definition": "DAB+ is an upgraded version of Digital Audio Broadcasting, offering clearer sound quality and a wider range of radio stations."
+    },
+    {
+        "term": "Daytime Running Lights",
+        "definition": "Daytime Running Lights are automatically activated lights that improve the visibility of your vehicle during daylight hours."
+    },
+    {
+        "term": "Diesel Particulate Filter (DPF)",
+        "definition": "A Diesel Particulate Filter (DPF) captures and stores exhaust soot to reduce emissions from diesel engines."
+    },
+    {
+        "term": "Direct Shift Gearbox (DSG)",
+        "definition": "The Direct Shift Gearbox (DSG) is an automatic transmission that pre-selects gears for quick and smooth gear changes."
+    },
+    {
+        "term": "Double cab",
+        "definition": "A double cab refers to a vehicle configuration with two rows of seats, providing additional seating capacity."
+    },
+    {
+        "term": "Driver Alert",
+        "definition": "The Driver Alert system monitors driving behavior and warns the driver if signs of fatigue are detected."
+    },
+    {
+        "term": "Dropside",
+        "definition": "A dropside is a flatbed vehicle with hinged side panels that can be lowered for easy loading and unloading."
+    },
+    {
+        "term": "Electronic Differential Lock (EDL)",
+        "definition": "The Electronic Differential Lock (EDL) helps improve traction by braking a spinning wheel, transferring power to the wheel with more grip."
+    },
+    {
+        "term": "Electronic Stabilisation Program (ESP)",
+        "definition": "The Electronic Stabilisation Program (ESP) enhances vehicle stability by detecting and reducing loss of traction."
+    },
+    {
+        "term": "Emissions standards",
+        "definition": "Emissions standards are regulations that set limits on the amount of pollutants a vehicle can emit."
+    },
+    {
+        "term": "Engine Braking Control (EBC)",
+        "definition": "Engine Braking Control (EBC) prevents the wheels from locking due to engine braking on slippery surfaces by increasing engine speed."
+    },
+    {
+        "term": "Kombi",
+        "definition": "A Kombi is a versatile vehicle configuration that combines passenger seating with cargo space."
+    },
+    {
+        "term": "Lane Change Assist - Side Scan",
+        "definition": "Lane Change Assist, also known as Side Scan, monitors the blind spots and warns the driver of approaching vehicles during lane changes."
+    },
+    {
+        "term": "Passive Safety",
+        "definition": "Passive safety refers to features that protect occupants during a collision, such as airbags and crumple zones."
+    },
+    {
+        "term": "Payload",
+        "definition": "Payload refers to the maximum weight of cargo and passengers that a vehicle can safely carry."
+    },
+    {
+        "term": "Pick-up",
+        "definition": "A pick-up is a light-duty truck with an enclosed cab and an open cargo area with low sides and tailgate."
+    },
+    {
+        "term": "Rear-view Camera",
+        "definition": "A rear-view camera provides a live video feed of the area behind the vehicle to assist with reversing and parking."
+    },
+    {
+        "term": "Stop/Start",
+        "definition": "The Stop/Start system automatically shuts down and restarts the engine to reduce idling time, improving fuel economy and reducing emissions."
+    },
+    {
+        "term": "TDI",
+        "definition": "TDI stands for Turbocharged Direct Injection, Volkswagen's diesel engine technology known for efficiency and performance."
+    },
+    {
+        "term": "Tipper",
+        "definition": "A tipper is a truck with a cargo bed that can be tilted to unload its contents."
+    },
+    {
+        "term": "Traction Control System (TCS)",
+        "definition": "The Traction Control System (TCS) prevents wheel spin during acceleration by reducing engine power or applying brakes to individual wheels."
+    },
+    {
+        "term": "Volkswagen Crafter conversions",
+        "definition": "Volkswagen Crafter conversions refer to customized adaptations of the Crafter model to suit specific business needs."
+    },
+    {
+        "term": "4MOTION",
+        "definition": "4MOTION is Volkswagen's all-wheel-drive system that provides improved traction and stability across various driving conditions."
+    }
+]

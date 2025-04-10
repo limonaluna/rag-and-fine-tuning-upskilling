@@ -32,45 +32,76 @@ Learn how to fine-tune a GPT model using Azure OpenAI Studio - UI Dashboard.
 * An Azure subscription.
 * Access to Azure OpenAI Service.
 * An Azure OpenAI resource created in the supported fine-tuning region (e.g. Sweden Central).
-* GPT Models that support fine-tuning so far: *gpt-35-turbo-0613* and *gpt-35-turbo-1106*.
-* Prepare Training and Validation datasets:
-  * at least 50 high-quality samples (preferably 1,000s) are required.
-  * must be formatted in the JSON Lines (JSONL) document with UTF-8 encoding.
+* GPT Models that support fine-tuning so far: [Fine-Tuning Models](https://learn.microsoft.com/en-us/azure/ai-services/openai/concepts/models?tabs=global-standard%2Cstandard-chat-completions#fine-tuning-models)
 
 You can check the MS Learn document [here](https://learn.microsoft.com/en-us/azure/ai-services/openai/how-to/fine-tuning?tabs=turbo%2Cpython&pivots=programming-language-studio) for more details.
 
-### Step 1: Open the *Create a custom model* wizard
+### Step 1: (Optional) Create your training and validation data
+**TO DO**: Adjust to VW glossary example
+**TO DO**: Schedule break for after this and prepare content to fill the gap
+**TO DO**: think about whether they could create their own dataset instead?
+## Choosing a Dataset for Fine-Tuning
+
+You have three options for preparing training and validation data for your fine-tuning experiment:
+
+#### 1. Use the Public Sample Dataset (Clippy)
+
+- **File Path**:  
+  `07-LLM-Fine-Tuning\data\public-sample\training_set.jsonl`
+- **Note**: This dataset contains only 10 examples. While it's not suitable for producing high-quality fine-tuning results, it's a great starting point to understand the fine-tuning process and pipeline.
+
+#### 2. Use the VW Technical Glossary Dataset
+
+- **File Path**:  
+  `07-LLM-Fine-Tuning\data\vw-technical-glossary\training_set_vw.jsonl`
+- **Source**: Derived from the [Volkswagen Vans Technical Glossary](https://www.volkswagen-vans.co.uk/en/technology/technical-glossary.html)
+- **Generation Method**: GPT-4o was used to create 100 high-quality questions based on glossary abbreviations.
+- **Note**: This dataset is more suitable for fine-tuning than the Clippy example, though the sample size is still relatively limited.
+
+#### 3. Create Your Own Custom Dataset
+
+You may also choose to define your own use case and generate a custom training and validation dataset.
+
+**Requirements:**
+- Minimum of **50 high-quality samples** (preferably in the thousands for better results)
+- Format must be **JSON Lines (JSONL)** with **UTF-8 encoding**
+
+💡 *Tip: You can use an LLM to help you generate training examples. Provide it with your source material and prompt it to create a specific number of examples tailored to your use case (e.g., Q&A, summarization, classification).*
+
+
+
+### Step 2: Open the *Create a custom model* wizard
 1. Open Azure OpenAI Studio at [https://oai.azure.com/](https://oai.azure.com/) and sign in with credentials that have access to your Azure OpenAI resource. During the sign-in workflow, select the appropriate directory, Azure subscription, and Azure OpenAI resource.
 2. In Azure Foundry, browse to the **Tools > Fine-Tuning** pane, and select **Fine-tune model**.
 ![Fine-tune base model](./../media/07-fine-tune-wizard.png)
 
-### Step 2: Select the *Base model*
+### Step 3: Select the *Base model*
 The first step in creating a custom model is to choose a base model. 
 
 The **Base model** pane lets you choose a base model to use for your custom model. Select the base model from the **Base model type** dropdown, and then select **Next** to continue.
 ![Base Model selection](./../media/07-base-model-selection.png)
 
-### Step 3: Configure your *Fine-Tuning Method*
+### Step 4: Configure your *Fine-Tuning Method*
 First, you need to choose the Fine-Tuning Method. We choose **Supervised** Method for this tutorial.
 ![Fine-Tuning Method](./../media/07-fine-tune-wizard2.png)
 
 
-### Step 4: Upload your *Training Data*
+### Step 5: Upload your *Training Data*
 The next step is to choose your training data either from the previously uploaded one or by uploading a new one. If you want to create your own training data, please note the following guidance on the required format of the training and validation data: [Guidance on data format](https://learn.microsoft.com/en-us/azure/ai-services/openai/how-to/fine-tuning?tabs=azure-openai&pivots=programming-language-studio#prepare-your-training-and-validation-data)
 
-Select **Local file** to upload training data from a local file - the sample training data can be found in this repository under "07-LLM-Fine-Tuning/data/training_set.jsonl"
+Select **Local file** to upload training data from a local file - the sample training data can be found in this repository under "07-LLM-Fine-Tuning/data/public-sample/training_set.jsonl"
 
 ![Upload training data](./../media/07-upload-training-data.png)
 
-### Step 5: Upload your *Validation Data*
+### Step 6: Upload your *Validation Data*
 You can choose your validation data by following the similar pattern as you upload your training data.
 
-### Step 6 (Optional): Configure *Advanced options*
+### Step 7 (Optional): Configure *Advanced options*
 You can keep the **Default** values for the fine-tuning job, or adjust the **Hyperparameters** as desired.
 
 One can refer to the MS Learn document [here](https://learn.microsoft.com/en-us/azure/ai-services/openai/how-to/fine-tuning?tabs=turbo%2Cpython&pivots=programming-language-studio#configure-advanced-options) for a detailed explanation on key tun-able hyperparameters.
 
-### Step 7: Review your choices, *Submit Training job* and check the *Status*
+### Step 8: Review your choices, *Submit Training job* and check the *Status*
 If you're ready to train your model, select **Submit** to start the fine-tuning job and return to the **Fine-Tuning** pane.
 
 You can check the status of the fine-tuned model in the **Status** column of the **Fine-Tuning** tab.
@@ -84,36 +115,40 @@ After you start a fine-tuning job, it can take some time to complete (from minut
 * Fine Tuning Run Logs:
 ![Fine Tune Training Logs](./../media/07-fine-tune-training-logs.png)
 
+* Fine Tuning run Metrics:
+![Fine Tune Training Metrics: Loss](./../media/07-fine-tune-metrics-loss.png)
 
-**TO DO**: Schedule break for after this and prepare content to fill the gap
-**TO DO**: think about whether they could create their own dataset instead?
+![Fine Tune Training Metrics: Token Accuracy](./../media/07-fine-tune-metrics-token-accuracy.png)
 
 
 
 
-### Step 8: Deploy a custom model
-When the fine-tuning job succeeds, you can deploy the custom model from the **Models** pane to make it available for use with completion calls.
+### Step 9: Deploy a custom model
+When the fine-tuning job succeeds, you can deploy the custom model from the **Fine-Tuning** pane to make it available for use with completion calls.
 
-To deploy your custom model, select the custom model to deploy, and then select **Deploy model**.
-<ol><img src="https://learn.microsoft.com/en-us/azure/ai-services/openai/media/fine-tuning/studio-models-deploy-model.png#lightbox
-" alt="Screenshot that shows how to deploy a custom model in Azure OpenAI Studio." width="600"/></ol>
+To deploy your fine-tuned model, select the custom model to deploy, and then select **Deploy**.
+![Deploy custom model](./../media/07-deploy-custom-model.png)
 
 The **Deploy model** dialog box opens. 
 
-In the dialog box, enter your **Deployment name** and then select **Create** to start the deployment of your custom model.
-<ol><img src="https://learn.microsoft.com/en-us/azure/ai-services/openai/media/fine-tuning/studio-models-deploy.png" alt="Screenshot of the Deploy Model dialog in Azure OpenAI Studio." width="600"/></ol>
+In the dialog box, enter your **Deployment name** and then select **Deploy** to start the deployment of your custom model.
 
-### Step 8: Test and use a deployed model
-After your custom model deploys, you can use it like any other deployed model. 
+![Deployment name for fine-tuned model](./../media/07-deploy-custom-model2.png)
+
+### Step 10: Test and use a deployed model
+After your custom model deploys (Provisioning State = "Succeeded"), you can use it like any other deployed model. 
+
+![How to use the fine-tuned model](./../media/07-use-custom-model.png)
 
 You can use the **Playgrounds** in [Azure OpenAI Studio]("https://oai.azure.com") to experiment with your new deployment. You can also use the fine-tuned model by calling the completion API.
 
-### Step 9 (Optional): Clean up your deployment resources
+### Step 11 (Optional): Clean up your deployment resources
 When you're done with your custom model, you can delete the deployment and model. You can also delete the training and validation files you uploaded to the service, if needed.
 
-### Step 10 (Optional): Continous fine-tuning
+![Delete or Continue Fine-Tuning](./../media/07-delete-custom-model.png)
+
+### Step 12 (Optional): Continous fine-tuning
 Once you have created a fine-tuned model you may wish to continue to refine the model over time through further fine-tuning. Continuous fine-tuning is the iterative process of selecting an already fine-tuned model as a base model and fine-tuning it further on new sets of training examples.
 
-To perform fine-tuning on a model that you have previously fine-tuned you would use the same process as described in **Step 1**, but instead of specifying the name of a generic base model, you would specify your already fine-tuned model. A custom fine-tuned model would look like <code>gpt-35-turbo-0613.ft-5fd1918ee65d4cd38a5dcf6835066ed7</code>
-<ol><img src="https://learn.microsoft.com/en-us/azure/ai-services/openai/media/fine-tuning/studio-continuous.png" alt="Screenshot of the Create a custom model UI with a fine-tuned model highlighted." width="600"/></ol>
+To perform fine-tuning on a model that you have previously fine-tuned you would use the same process as described in **Step 1**, but instead of specifying the name of a generic base model, you would specify your already fine-tuned model. A custom fine-tuned model would look like <code>gpt-35-turbo-0613.ft-5fd1918ee65d4cd38a5dcf6835066ed7
 
