@@ -7,16 +7,22 @@ To ensure a smooth training experience, pre-deploy the Azure resources as descri
 
 ## Deploy Azure Resources
 1. (Optional): Deploy a dedicated resource group for this repository
-2. Deploy an Azure OpenAI service
+2. Deploy an Azure OpenAI service. It can be deployed as a stand-alone service, or using Azure AI Foundry.
 3. Deploy an Azure Storage Account (ADLS Gen2) with hierarchical namespace enabled
 4. Deploy and Azure AI Search Service (if no networking requirements exist, you can choose "Basic" tier, else "Standard" Tier S1)
+
+### A few remarks on the choice of deployment region
+Due to feature availability, it is recommended to deploy Azure OpenAI and Azure AI Search in the region "Sweden-Central".
+* To use all advanced AI search features, **North Europe** would be recommended (see [here](https://learn.microsoft.com/en-us/azure/search/search-region-support#europe) feature availability for Europe).
+* However, for Fine-Tuning OpenAI model, **Sweden Central** and **Switzerland West** are only available in Europe (see [here](https://learn.microsoft.com/en-us/azure/search/search-region-support#europe)). Switzerland has only access to older models, while Sweden Central also allows for fine-tuning of gpt-4o and gpt-4o-mini
+* Therefore, **Sweden Central** is recommended as a region
 
 ## Roll out permissions for users
 - If deployed in a dedicated resource group, deploy the following permissions for the participants of the workshop on the scope of the resource group
 - Else, roll the permissions out individually on the resources
-    1. Contributor
-    2. Search Service Contributor
-    3. Storage Blob Data Contributor
+    1. Contributor (all resources)
+    2. Search Service Contributor (AI Search service)
+    3. Storage Blob Data Contributor (Azure Storage Account)
 
 ## Configure Resources
 ### Azure AI Search
