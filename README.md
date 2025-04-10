@@ -11,7 +11,7 @@ The content has been adapted and enriched to provide a smoother and more guided 
 
 ## 📁 Repository Structure
 
-### **[01 – Azure Resource Setup](./01_AzureResourceSetup)**  
+### **01 – Azure Resource Setup**  
 🧱 **Foundation for Everything**  
 Before doing anything else, you’ll need to set up the essential Azure services: **Azure OpenAI**, **Azure AI Search**, and **Azure Storage**.  
 This step lays the groundwork for all following steps.
@@ -82,7 +82,7 @@ This is a standalone step focused on using the **Azure OpenAI Studio** to fine-t
 * This repo is for educational and prototyping purposes and is not production-hardened.
 * You may need to request access to Azure OpenAI via the Azure OpenAI portal.
 
-🙌 Acknowledgments
+## 🙌 Acknowledgments
 This work builds upon:
 * [RAG Time](https://github.com/microsoft/rag-time) by Microsoft
 * [LLM-Fine-Tuning-Azure](https://github.com/microsoft/LLM-Fine-Tuning-Azure/tree/main) by Microsoft

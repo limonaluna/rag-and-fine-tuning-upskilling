@@ -144,7 +144,7 @@ Let's test the system whether it avoids hallucination or answers with irrelevant
 <details>
   <summary>:white_check_mark: See Code!</summary>
 
-    user_question = ""Who won the last FIFA World Cup?""
+    user_question = "Who won the last FIFA World Cup?"
     result = get_answer_from_question(user_question)
     print(result)
 </details>
@@ -153,7 +153,7 @@ Let's test the system whether it avoids hallucination or answers with irrelevant
   <summary>:white_check_mark: See Expected Answer!</summary>
   
     - Source-File: no source file
-    - Expected Answer: ...
+    - Expected Answer: The retrieved text does not contain information about the winner of the last FIFA World Cup.
 
 </details>
 
