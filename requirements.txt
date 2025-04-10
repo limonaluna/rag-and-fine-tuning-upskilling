@@ -1,0 +1,11 @@
+dotenv
+python-dotenv
+azure-ai-inference[opentelemetry]
+azure-search-documents 
+azure-identity
+openai
+ipykernel
+pandas
+jinja2
+datasets
+tabulate
