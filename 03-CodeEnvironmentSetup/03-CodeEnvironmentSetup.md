@@ -31,18 +31,25 @@ GitHub will automatically provision a development container based on the detecte
 
 ![Launch Codespace](./../media/03-launch-codespace.png)
 
-
 ### Inside the Codespace
 - Ready-to-code environment with language-specific tools pre-installed
 - Access to a full-featured terminal and Git
 - Built-in port forwarding for local servers or apps
 - VS Code extensions automatically suggested based on the project
 
-
 ### Saving Your Work
 - Use Git inside the Codespace terminal or the **Source Control** tab to commit and push your changes back to the repo.
 - Your changes are saved automatically when you commit.
 
+### Stopping and Re-Starting a Codespace
+You can stop a codespace at any time. When you stop a codespace, any running processes are stopped. Any saved changes in your codespace will still be available when you next start it. The terminal history is preserved, but the visible contents of the terminal window are not preserved between codespace sessions.
+
+If you do not explicitly stop a codespace, it will continue to run until it times out from inactivity. Closing a codespace does not stop the codespace. For example, if you're using a codespace in the VS Code web client and you close the browser tab, the codespace remains running on the remote machine. For information about timeouts, see [Understanding the codespace lifecycle](https://docs.github.com/en/codespaces/about-codespaces/the-codespace-lifecycle#timeouts-for-github-codespaces).
+
+### Delete your Codespace
+Codespaces are automatically deleted after they have been stopped and have remained inactive for a defined number of days. The default retention period is 30 days.
+however, at the end of the lab, it is recommended to delete your codespace to avoid running into codespace limitations or consuming too much of your free storage quota. 
+More info in deleting your codespace is [here](https://docs.github.com/en/codespaces/developing-in-a-codespace/deleting-a-codespace)
 
 ## Local Setup
 If you don't want to use Github Codespaces, you can use a Python Virtual Environment instead.
