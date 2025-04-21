@@ -96,14 +96,13 @@ You can choose your validation data by following the similar pattern as you uplo
 You can keep the **Default** values for the fine-tuning job, or adjust the **Hyperparameters** as desired.
 
 #### Overview on the hyperparameters:
-**Batch size**: is how many training examples you use in a single pass during training – trade off between speed & accuracy
+**Batch size**: The batch size to use for training. The batch size is the number of training examples used to train a single forward and backward pass. In general, we've found that larger batch sizes tend to work better for larger datasets. The default value as well as the maximum value for this property are specific to a base model. A larger batch size means that model parameters are updated less frequently, but with lower variance.
 
-**Learning Rate Multiplier**: multiplies the original learning rate used by the base model. Values > 1 increase the learning rate, < 1 decrease.
+**Learning Rate Multiplier**: The learning rate multiplier to use for training. The fine-tuning learning rate is the original learning rate used for pre-training multiplied by this value. Larger learning rates tend to perform better with larger batch sizes. We recommend experimenting with values in the range 0.02 to 0.2 to see what produces the best results. A smaller learning rate may be useful to avoid overfitting.
 
-**Epochs**: determine the number of passes through the training data. Too few – underfit; too many – overfit
+**Epochs**: The number of epochs to train the model for. An epoch refers to one full cycle through the training dataset. Too few – underfit; too many – overfit
 
-**Seed**: sets the random seed for your run – so you can get reproducible results! 
-
+**Seed**: The seed controls the reproducibility of the job. Passing in the same seed and job parameters should produce the same results, but may differ in rare cases. If a seed isn't specified, one will be generated for you
 
 One can refer to the MS Learn document [here](https://learn.microsoft.com/en-us/azure/ai-services/openai/how-to/fine-tuning?tabs=turbo%2Cpython&pivots=programming-language-studio#configure-advanced-options) for a detailed explanation on key tun-able hyperparameters.
 
