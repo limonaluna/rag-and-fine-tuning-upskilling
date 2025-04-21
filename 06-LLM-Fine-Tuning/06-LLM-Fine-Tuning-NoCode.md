@@ -95,6 +95,16 @@ You can choose your validation data by following the similar pattern as you uplo
 ### Step 7 (Optional): Configure *Advanced options*
 You can keep the **Default** values for the fine-tuning job, or adjust the **Hyperparameters** as desired.
 
+#### Overview on the hyperparameters:
+**Batch size**: is how many training examples you use in a single pass during training – trade off between speed & accuracy
+
+**Learning Rate Multiplier**: multiplies the original learning rate used by the base model. Values > 1 increase the learning rate, < 1 decrease.
+
+**Epochs**: determine the number of passes through the training data. Too few – underfit; too many – overfit
+
+**Seed**: sets the random seed for your run – so you can get reproducible results! 
+
+
 One can refer to the MS Learn document [here](https://learn.microsoft.com/en-us/azure/ai-services/openai/how-to/fine-tuning?tabs=turbo%2Cpython&pivots=programming-language-studio#configure-advanced-options) for a detailed explanation on key tun-able hyperparameters.
 
 ### Step 8: Review your choices, *Submit Training job* and check the *Status*
