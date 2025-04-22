@@ -25,7 +25,7 @@ You may consider Fine-Tuning when:
 
 # Hands-On Lab
 ## Fine-Tuning GPT Models - A Dashboard Experience
-Learn how to fine-tune a GPT model using Azure OpenAI Studio - UI Dashboard.  
+Learn how to fine-tune a GPT model using Azure AI Foundry - UI Dashboard.  
 
 ### Prerequisites
 * Learn the [what, why, and when to use fine-tuning.](https://learn.microsoft.com/en-us/azure/ai-services/openai/concepts/fine-tuning-considerations)
@@ -67,7 +67,7 @@ You may also choose to define your own use case and generate a custom training a
 
 
 ### Step 2: Open the *Create a custom model* wizard
-1. Open Azure OpenAI Studio at [https://oai.azure.com/](https://oai.azure.com/) and sign in with credentials that have access to your Azure OpenAI resource. During the sign-in workflow, select the appropriate directory, Azure subscription, and Azure OpenAI resource.
+1. Open Azure AI Foundry at [https://oai.azure.com/](https://oai.azure.com/) and sign in with credentials that have access to your Azure OpenAI resource. During the sign-in workflow, select the appropriate directory, Azure subscription, and Azure OpenAI resource.
 2. In Azure Foundry, browse to the **Tools > Fine-Tuning** pane, and select **Fine-tune model**.
 ![Fine-tune base model](./../media/06-fine-tune-wizard.png)
 
@@ -143,7 +143,7 @@ After your custom model deploys (Provisioning State = "Succeeded"), you can use 
 
 ![How to use the fine-tuned model](./../media/06-use-custom-model.png)
 
-You can use the **Playgrounds** in [Azure OpenAI Studio]("https://oai.azure.com") to experiment with your new deployment. You can also use the fine-tuned model by calling the completion API.
+You can use the **Playgrounds** in [Azure AI Foundry]("https://oai.azure.com") to experiment with your new deployment. You can also use the fine-tuned model by calling the completion API.
 
 Example: Compare the output of Base-Model to your fine-tuned model to a question specific to your fine-tuned data.
 

@@ -59,7 +59,7 @@ This notebook builds on RAG Fundamentals and explores **different search strateg
 
 ### **06 – LLM Fine-Tuning**  
 🎯 **Fine-Tune GPT Models with Azure OpenAI**  
-This is a standalone step focused on using the **Azure OpenAI Studio** to fine-tune a language model (no RAG setup required).
+This is a standalone step focused on using the **Azure AI Foundry** to fine-tune a language model (no RAG setup required).
 
 > ✅ **Only requires:** Step 01 (Azure setup)  
 > 🔧 **To Do:** Use the Azure AI Foundry experience in the Portal (no-code).
@@ -68,7 +68,7 @@ This is a standalone step focused on using the **Azure OpenAI Studio** to fine-t
 ## 🔧 Requirements
 * An Azure subscription with permission to deploy resources and configure authentication:
     * Azure OpenAI
-    * Azure Cognitive Search
+    * Azure AI Search
     * Azure Storage
 
 * Basic familiarity with Python and LLMs
